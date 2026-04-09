@@ -5,7 +5,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 const CTASection = () => {
   const { ref, isVisible } = useScrollAnimation();
   return (
-    <section id="contact" className="py-20 md:py-28">
+    <section id="contact" className="pb-20 md:pb-28">
       <div ref={ref} className={`container mx-auto px-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div className="relative rounded-3xl gradient-bg p-12 md:p-20 text-center overflow-hidden">
           {/* Decorative circles */}
@@ -30,7 +30,7 @@ const CTASection = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-primary-foreground/60 text-primary-foreground hover:bg-primary-foreground/10 text-base px-8"
+                className="border-2 border-primary-foreground text-primary-foreground bg-transparent hover:bg-primary-foreground/20 text-base px-8"
               >
                 Liên hệ tư vấn
               </Button>
