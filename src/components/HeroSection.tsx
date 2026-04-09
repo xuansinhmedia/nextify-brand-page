@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Wifi, Users, BarChart3 } from "lucide-react";
-import heroVideo from "@/assets/hero-animation.mp4.asset.json";
+import heroImage from "@/assets/hero-illustration.jpg";
 
 const HeroSection = () => {
   return (
@@ -59,15 +59,7 @@ const HeroSection = () => {
 
           <div className="relative">
             <div className="rounded-2xl overflow-hidden shadow-card">
-              <video
-                src={heroVideo.url}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-auto"
-                poster=""
-              />
+              <img src={heroImage} alt="Nextify WiFi CRM Dashboard" className="w-full h-auto" />
             </div>
           </div>
         </div>
