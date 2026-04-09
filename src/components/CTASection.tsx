@@ -30,7 +30,7 @@ const CTASection = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-base px-8"
+                className="border-primary-foreground/60 text-primary-foreground hover:bg-primary-foreground/10 text-base px-8"
               >
                 Liên hệ tư vấn
               </Button>
