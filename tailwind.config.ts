@@ -12,8 +12,18 @@ export default {
         "2xl": "1400px",
       },
     },
+    fontFamily: {
+      sans: ['Inter', 'system-ui', 'sans-serif'],
+    },
     extend: {
       colors: {
+        navy: {
+          DEFAULT: "hsl(215, 50%, 18%)",
+          dark: "#1A2942",
+        },
+        slate: {
+          brand: "#64748B",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
