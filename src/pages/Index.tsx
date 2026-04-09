@@ -4,7 +4,7 @@ import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import PricingSection from "@/components/PricingSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import RegistrationForm from "@/components/RegistrationForm";
+
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
