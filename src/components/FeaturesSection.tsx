@@ -1,4 +1,5 @@
 import { Database, MessageSquare, TrendingUp, Users, Wifi, Star } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const features = [
   {
