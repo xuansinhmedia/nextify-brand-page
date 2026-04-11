@@ -3,13 +3,15 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/Footer";
 import { ReactNode } from "react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 interface SolutionLayoutProps {
   title: string;
   subtitle: string;
   description: string;
   icon: ReactNode;
-  features: { title: string; description: string }[];
+  heroImage?: string;
+  features: { title: string; description: string; icon?: ReactNode }[];
   benefits: string[];
   ctaText?: string;
 }
@@ -19,10 +21,14 @@ const SolutionLayout = ({
   subtitle,
   description,
   icon,
+  heroImage,
   features,
   benefits,
   ctaText = "Dùng thử miễn phí",
 }: SolutionLayoutProps) => {
+  const featuresAnim = useScrollAnimation();
+  const benefitsAnim = useScrollAnimation();
+
   return (
     <div className="min-h-screen bg-background">
       {/* Nav */}
@@ -46,32 +52,53 @@ const SolutionLayout = ({
       {/* Hero */}
       <section className="pt-28 pb-16 md:pt-36 md:pb-24">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="w-16 h-16 rounded-2xl gradient-bg flex items-center justify-center mx-auto mb-6">
-              {icon}
+          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div className="text-center md:text-left">
+              <div className="w-16 h-16 rounded-2xl gradient-bg flex items-center justify-center mx-auto md:mx-0 mb-6">
+                {icon}
+              </div>
+              <span className="text-sm font-semibold text-primary uppercase tracking-wider">{subtitle}</span>
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground mt-3 mb-6">{title}</h1>
+              <p className="text-lg text-muted-foreground leading-relaxed">{description}</p>
+              <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <Button size="lg" className="gradient-bg border-0 text-primary-foreground shadow-brand hover:opacity-90">
+                  {ctaText}
+                </Button>
+                <Link to="/#contact">
+                  <Button size="lg" variant="outline">Liên hệ tư vấn</Button>
+                </Link>
+              </div>
             </div>
-            <span className="text-sm font-semibold text-primary uppercase tracking-wider">{subtitle}</span>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mt-3 mb-6">{title}</h1>
-            <p className="text-lg text-muted-foreground leading-relaxed">{description}</p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="gradient-bg border-0 text-primary-foreground shadow-brand hover:opacity-90">
-                {ctaText}
-              </Button>
-              <Link to="/#contact">
-                <Button size="lg" variant="outline">Liên hệ tư vấn</Button>
-              </Link>
-            </div>
+            {heroImage && (
+              <div className="flex justify-center">
+                <img
+                  src={heroImage}
+                  alt={title}
+                  width={800}
+                  height={600}
+                  className="w-full max-w-lg drop-shadow-2xl animate-float"
+                />
+              </div>
+            )}
           </div>
         </div>
       </section>
 
       {/* Features */}
       <section className="py-16 md:py-24 bg-muted/30">
-        <div className="container mx-auto px-4">
+        <div
+          ref={featuresAnim.ref}
+          className={`container mx-auto px-4 transition-all duration-700 ${featuresAnim.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        >
           <h2 className="text-3xl font-bold text-foreground text-center mb-12">Tính năng nổi bật</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {features.map((f) => (
               <div key={f.title} className="p-6 rounded-2xl bg-card border border-border/50 hover:shadow-card hover:border-primary/20 transition-all duration-300">
+                {f.icon && (
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                    {f.icon}
+                  </div>
+                )}
                 <h3 className="text-lg font-semibold text-foreground mb-2">{f.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{f.description}</p>
               </div>
@@ -82,7 +109,10 @@ const SolutionLayout = ({
 
       {/* Benefits */}
       <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
+        <div
+          ref={benefitsAnim.ref}
+          className={`container mx-auto px-4 transition-all duration-700 ${benefitsAnim.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        >
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-foreground text-center mb-12">Lợi ích cho doanh nghiệp</h2>
             <div className="grid sm:grid-cols-2 gap-4">
