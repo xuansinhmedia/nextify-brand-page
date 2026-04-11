@@ -49,17 +49,22 @@ const Footer = () => {
             },
             {
               title: "Hỗ trợ",
-              links: ["Tài liệu", "FAQ", "Chính sách bảo mật", "Điều khoản"],
+              links: [
+                { label: "Tài liệu", href: "#" },
+                { label: "FAQ", href: "#" },
+                { label: "Chính sách bảo mật", href: "#" },
+                { label: "Điều khoản", href: "#" },
+              ],
             },
           ].map((col) => (
             <div key={col.title}>
               <h4 className="text-background font-semibold text-sm mb-4">{col.title}</h4>
               <ul className="space-y-2">
                 {col.links.map((link) => (
-                  <li key={link}>
-                    <a href="#" className="text-background/50 text-sm hover:text-background/80 transition-colors">
-                      {link}
-                    </a>
+                  <li key={link.label}>
+                    <Link to={link.href} className="text-background/50 text-sm hover:text-background/80 transition-colors">
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
