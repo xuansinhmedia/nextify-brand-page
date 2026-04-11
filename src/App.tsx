@@ -9,6 +9,7 @@ import WifiMarketing from "./pages/WifiMarketing.tsx";
 import CRMAutomation from "./pages/CRMAutomation.tsx";
 import CustomerAnalytics from "./pages/CustomerAnalytics.tsx";
 import LoyaltyProgram from "./pages/LoyaltyProgram.tsx";
+import AboutUs from "./pages/AboutUs.tsx";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/giai-phap/crm-tu-dong" element={<CRMAutomation />} />
           <Route path="/giai-phap/phan-tich-khach-hang" element={<CustomerAnalytics />} />
           <Route path="/giai-phap/loyalty-program" element={<LoyaltyProgram />} />
+          <Route path="/ve-chung-toi" element={<AboutUs />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

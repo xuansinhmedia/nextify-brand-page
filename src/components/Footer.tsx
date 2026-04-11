@@ -40,7 +40,12 @@ const Footer = () => {
           {[
             {
               title: "Công ty",
-              links: ["Về chúng tôi", "Blog", "Tuyển dụng", "Liên hệ"],
+              links: [
+                { label: "Về chúng tôi", href: "/ve-chung-toi" },
+                { label: "Blog", href: "#" },
+                { label: "Tuyển dụng", href: "#" },
+                { label: "Liên hệ", href: "#" },
+              ],
             },
             {
               title: "Hỗ trợ",

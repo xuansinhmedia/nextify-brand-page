@@ -1,6 +1,6 @@
 import { Star, Coins, Crown, Gift, Heart, Share2, Gamepad2 } from "lucide-react";
 import SolutionLayout from "./SolutionLayout";
-import heroImg from "@/assets/solution-loyalty-program.png";
+import heroImg from "@/assets/solution-loyalty-program-v2.png";
 
 const LoyaltyProgram = () => (
   <SolutionLayout
