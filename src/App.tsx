@@ -5,6 +5,10 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import WifiMarketing from "./pages/WifiMarketing.tsx";
+import CRMAutomation from "./pages/CRMAutomation.tsx";
+import CustomerAnalytics from "./pages/CustomerAnalytics.tsx";
+import LoyaltyProgram from "./pages/LoyaltyProgram.tsx";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +20,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/giai-phap/wifi-marketing" element={<WifiMarketing />} />
+          <Route path="/giai-phap/crm-tu-dong" element={<CRMAutomation />} />
+          <Route path="/giai-phap/phan-tich-khach-hang" element={<CustomerAnalytics />} />
+          <Route path="/giai-phap/loyalty-program" element={<LoyaltyProgram />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
