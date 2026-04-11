@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Check, ArrowRight } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const plans = [
   {
@@ -57,9 +58,10 @@ const plans = [
 ];
 
 const PricingSection = () => {
+  const { ref, isVisible } = useScrollAnimation();
   return (
     <section id="pricing" className="py-20 md:py-28 bg-muted/30">
-      <div className="container mx-auto px-4">
+      <div ref={ref} className={`container mx-auto px-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="inline-block text-sm font-semibold text-primary mb-3 tracking-wide uppercase">
             Bảng giá
