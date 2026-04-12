@@ -43,17 +43,17 @@ const Footer = () => {
               links: [
                 { label: "Về chúng tôi", href: "/ve-chung-toi" },
                 { label: "Blog", href: "#" },
-                { label: "Tuyển dụng", href: "#" },
-                { label: "Liên hệ", href: "#" },
+                { label: "Tuyển dụng", href: "/tuyen-dung" },
+                { label: "Liên hệ", href: "/lien-he" },
               ],
             },
             {
               title: "Hỗ trợ",
               links: [
                 { label: "Tài liệu", href: "#" },
-                { label: "FAQ", href: "#" },
-                { label: "Chính sách bảo mật", href: "#" },
-                { label: "Điều khoản", href: "#" },
+                { label: "FAQ", href: "/faq" },
+                { label: "Chính sách bảo mật", href: "/chinh-sach-bao-mat" },
+                { label: "Điều khoản", href: "/dieu-khoan" },
               ],
             },
           ].map((col) => (
