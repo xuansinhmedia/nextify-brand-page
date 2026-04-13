@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   const solutions = [
     { label: "WiFi Marketing", href: "/giai-phap/wifi-marketing" },
+    { label: "WiFi Hành chính công", href: "/giai-phap/wifi-hanh-chinh-cong" },
     { label: "CRM tự động", href: "/giai-phap/crm-tu-dong" },
     { label: "Phân tích khách hàng", href: "/giai-phap/phan-tich-khach-hang" },
     { label: "Loyalty Program", href: "/giai-phap/loyalty-program" },
