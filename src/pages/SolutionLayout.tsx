@@ -14,6 +14,7 @@ interface SolutionLayoutProps {
   features: { title: string; description: string; icon?: ReactNode }[];
   benefits: string[];
   ctaText?: string;
+  children?: ReactNode;
 }
 
 const SolutionLayout = ({
@@ -25,6 +26,7 @@ const SolutionLayout = ({
   features,
   benefits,
   ctaText = "Dùng thử miễn phí",
+  children,
 }: SolutionLayoutProps) => {
   const featuresAnim = useScrollAnimation();
   const benefitsAnim = useScrollAnimation();
@@ -128,6 +130,8 @@ const SolutionLayout = ({
           </div>
         </div>
       </section>
+
+      {children}
 
       {/* CTA */}
       <section className="py-16 md:py-24 gradient-bg">
